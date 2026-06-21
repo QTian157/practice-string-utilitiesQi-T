@@ -3,11 +3,19 @@ function capitalize(str){
    return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
+// function reverse(str) {
+//     if (!str) {
+//         return "";
+//     }
+//     return str.split("").reverse().join("");
+
+// }
+
 function reverse(str) {
-    if (!str) {
-        return "";
+    if (!str || str.length <= 1) {
+        return str;
     }
-    return str.split("").reverse().join("");
+    return reverse(str.slice(1)) + str[0];
 
 }
 
